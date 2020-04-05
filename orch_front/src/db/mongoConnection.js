@@ -13,8 +13,8 @@ var dbMongoName = properties.get('database.mongo.dbName');
 
 const url = 'mongodb://'+dbMongoUser + ':' + dbMongoPwd + '@' + dbMongoHost + ':' + dbMongoPort;
 */
-var dbMongoName = 'MDM';
-const url = "mongodb://usermdm:MM0rWtVfp7@104.42.248.72:27017/MDM";
+var dbMongoName = 'db';
+const url = "mongodb://user:pwd@host:port/MDM";
 const client = new MongoClient(url);
 
 /*
