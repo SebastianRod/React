@@ -13,7 +13,7 @@ function App() {
         <Title></Title>
         
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Editar <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
