@@ -4,11 +4,22 @@ import React from 'react';
 var GetConstant = require('../db/findConstants');
 
 export default class Header extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            constante : GetConstant
+        };
+    }
+
     render(){
         return(
-            <h1>
-                
-            </h1>
+            <div>
+                <h1>Llegamos</h1>
+                <h1>
+                {this.state.constante}
+                </h1>
+            </div> 
         )
     }
 }

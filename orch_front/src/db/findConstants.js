@@ -11,9 +11,12 @@ const Init = async () => {
 };
 
 function getConstant(){
-    const db = await connection();
-    var result = db.collection('ORCH_CONSTANTS').find({key : 'ASAP_PRODUCCION'});
+    const db = connection();
+    var result = db.collection('ORCH_CONSTANTS').find({key : 'ASAP_PRODUCCION'}).toArray();
+    console.log("Este fue el resultado: "+result);
     return result;
 }
 
-module.exports = getConstant;
+var result = getConstant();
+console.log(result);
+module.exports = result;
