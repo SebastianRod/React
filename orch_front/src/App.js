@@ -21,15 +21,6 @@ class App extends React.Component {
     return( 
       <div>
         <Dashboard/>
-        <Title className="Titulo"/>
-        <div className="Contenedor">
-          <div>
-            <Atomics atomics = {this.state.atomics}/>
-          </div>
-          <div>
-            <Services services = {this.state.services}/>
-          </div>
-        </div>
       </div>
     );
   }
