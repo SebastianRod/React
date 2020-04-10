@@ -7,6 +7,7 @@ import services from './data/Services.json';
 import Atomics from './components/Atomics';
 import Services from './components/Services';
 import Title from './components/Title';
+import Dashboard from './components/front_v2/Dashboard';
 
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
   render() {
     return( 
       <div>
+        <Dashboard/>
         <Title className="Titulo"/>
         <div className="Contenedor">
           <div>
