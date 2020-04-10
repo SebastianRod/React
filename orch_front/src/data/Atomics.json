@@ -1,0 +1,17 @@
+[
+    {
+        "_id" : "1",
+        "id" : "CollFindTramites",
+        "description" : "Este busca en coll_tramites"
+    },
+    {
+        "_id" : "2",
+        "id" : "CollFindServ_activo",
+        "description" : "Este busca en servicio_activo"
+    },
+    {
+        "_id" : "3",
+        "id" : "CollFindInventario",
+        "description" : "Este busca en cd_inventario"
+    }
+]

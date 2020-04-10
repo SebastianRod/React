@@ -1,0 +1,8 @@
+.Contenedor{
+  column-count: 2;
+  height: 600px;
+}
+
+.Titulo{
+  text-align: center;
+}

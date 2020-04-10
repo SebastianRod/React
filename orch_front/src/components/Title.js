@@ -1,12 +1,10 @@
 import React from 'react';
+import '../css/Title.css';
 
 export default class Title extends React.Component {
     render(){
         return(
-            <div>
-                <h1>Orquestador</h1>
-                <p>Este es el front del orquestador</p>
-            </div>
+                <h1 className="Titulo">Orquestador</h1>
         );
     }
 }

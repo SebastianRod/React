@@ -1,31 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 
+import atomics from './data/Atomics.json';
+import services from './data/Services.json';
+
+import Atomics from './components/Atomics';
+import Services from './components/Services';
 import Title from './components/Title';
-//import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Title></Title>
-        
-        <p>
-          Editar <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  state = {
+    atomics : atomics,
+    services : services
+  }
+
+  render() {
+    return( 
+      <div>
+        <Title className="Titulo"/>
+        <div className="Contenedor">
+          <div>
+            <Atomics atomics = {this.state.atomics}/>
+          </div>
+          <div>
+            <Services services = {this.state.services}/>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
 
 export default App;

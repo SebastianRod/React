@@ -1,0 +1,53 @@
+[
+    {
+        "_id" : "1",
+        "id" : "CollProcesaAlgo",
+        "Description" : "Este servicio ejecuta varios atomics.",
+        "Orchestration" : [
+            {
+                "atomicId" : "CollFindTramites",
+                "description" : "Este busca en coll_tramites"
+            }
+        ],
+        "Context" : [
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4"
+        ]
+    },
+    {
+        "_id" : "2",
+        "id" : "CollProcesaAlgo2",
+        "Description" : "Este servicio ejecuta varios atomics.",
+        "Orchestration" : [
+            {
+                "atomicId" : "CollFindServ_activo",
+                "description" : "Este busca en coll_tramites"
+            }
+        ],
+        "Context" : [
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4"
+        ]
+    },
+    {
+        "_id" : "3",
+        "id" : "CollProcesaAlgo3",
+        "Description" : "Este servicio ejecuta varios atomics.",
+        "Orchestration" : [
+            {
+                "atomicId" : "CollFindInventario",
+                "description" : "Este busca en coll_tramites"
+            }
+        ],
+        "Context" : [
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4"
+        ]
+    }
+]
