@@ -1,6 +1,21 @@
 /**
  * Creates and handles mongodb connection
  * 
+ * USAGE FROM OTHER FILEs:
+ * 
+ * var mongoConnection = require('./src/db/connection.js');
+ * mongoConnection.connect
+ * .then((client) => {
+ *   const db = client.db();
+ * 
+ *   ... your code here!
+ * 
+ *   client.close(); // <<-- always close the client!
+ * })
+ * .catch((err) => {
+ *   ... your error handle here
+ * });
+ * 
  * @author xionjames
  * @version 1.0
  */

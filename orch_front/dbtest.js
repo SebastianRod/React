@@ -9,9 +9,8 @@ mongoConnection.connect
     console.log(docs)
   });
 
-  client.close();
+  client.close(); // <<-- always close the client!
 })
 .catch((err) => {
-
   console.log("Ups! La estoy cagando!");
 });
