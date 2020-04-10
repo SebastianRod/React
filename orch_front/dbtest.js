@@ -4,7 +4,7 @@ mongoConnection.connect
 .then((client) => {
   const db = client.db();
 
-  db.collection('objects').find({}).toArray(function(err, docs) {
+  db.collection('ORCH_ATOMICS').find({id: "CollInsEnvioPlataformaFTTX_ASAP"}).toArray(function(err, docs) {
     console.log("Found the following records");
     console.log(docs)
   });
