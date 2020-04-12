@@ -23,7 +23,7 @@
 const settings = require('./settings.js');
 const MongoClient = require('mongodb').MongoClient;
 
-exports.connect = new Promise((resolv, reject) => {
+exports.connect = async function() {
     // Connection URL
     const dbUrl = 'mongodb://' 
                 + settings.DB_USER + ':' 
@@ -37,12 +37,16 @@ exports.connect = new Promise((resolv, reject) => {
 
     // Use connect method to connect to the Server
     console.log("Connecting to database...");
-    client.connect(function(err) {
-        if (!err) {
-            console.log("Connected successfully to database!");
-            resolv(client);
-        } else {
-            console.log("ERROR: " + err);
-        }
-    });
-});
+    return await client.connect();
+}
+
+exports.find = async function(collection, filters, selector = {}, sorting = {}) {
+  const client = await exports.connect();
+  const db = client.db();
+
+  var docs = await db.collection('ORCH_SERVICES').find({}, {projection: {id: 1, _id: 0, keys: 1, description: 1}, sort: sorting}).toArray();
+
+  client.close();
+
+  return docs;
+}

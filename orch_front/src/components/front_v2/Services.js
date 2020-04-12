@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,10 +12,6 @@ function createData(id, description, keys) {
     return { id, description, keys };
   }
 
-const rows = [
-    createData('CollProcesaRmca','Procesa los tramites de la Bapi', ['Rmca','Bapi'])
-];
-
 function preventDefault(event) {
     event.preventDefault();
 }
@@ -26,8 +22,25 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Services() {
-    return (
+
+class Services extends Component {
+    state = {orchServices: []}
+  
+    componentDidMount() {
+        fetch('/api/services/getAll')
+        .then(res => res.json())
+        .then(response => {
+            if (response.response === 'OK') {
+                this.setState({ orchServices: response.documents })
+            } else {
+                // TODO pintar el error
+            }
+            
+        });
+    }
+  
+    render() {
+      return (
         <React.Fragment>
             <Title>Services</Title>
             <Table size="small">
@@ -39,7 +52,7 @@ export default function Services() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((dato) => (
+                    {this.state.orchServices.map((dato) => (
                         <TableRow key={dato.id}>
                             <TableCell>
                                 <Link color="primary" href="#" onClick={preventDefault}>
@@ -53,5 +66,8 @@ export default function Services() {
                 </TableBody>
             </Table>
         </React.Fragment>
-    );
-}
+      );
+    }
+  }
+
+export default Services;
