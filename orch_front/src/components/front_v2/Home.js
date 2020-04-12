@@ -23,7 +23,7 @@ import Orders from './Orders';
 import Title from './Title';
 import HomeIcon from '@material-ui/icons/HomeRounded';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Prueba2 from './Prueba2';
+import Services from './Services';
 
 const drawerWidth = 240;
 
@@ -184,7 +184,7 @@ export default function Home (){
                     );
                 }}>
                 </Route>
-                <Route exact path="/prueba2" render={() => {
+                <Route exact path="/Services" render={() => {
                     return (
                         <main className={classes.content}>
                         <div className={classes.appBarSpacer} />
@@ -193,7 +193,7 @@ export default function Home (){
                                 <Grid item xs={12}>
                                     <Paper className={fixedHeightPaper}>
                                         <React.Fragment>
-                                        <Prueba2/>
+                                        <Services/>
                                         </React.Fragment>
                                         </Paper>
                                 </Grid>

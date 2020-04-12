@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Prueba2() {
+export default function Services() {
     return (
         <React.Fragment>
             <Title>Services</Title>
