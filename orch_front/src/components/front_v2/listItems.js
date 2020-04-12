@@ -6,6 +6,7 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PuzzleIcon from '@material-ui/icons/Extension';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default class MainListItems extends React.Component {
 
@@ -23,19 +24,25 @@ export default class MainListItems extends React.Component {
         })
     }
 
+    ListItemLink = (props) => {
+        return <ListItem button component="a" {...props} />;
+    }
+
     render() {
         return (
             <div>
-                <ListItem 
-                    button
-                    onClick={this.onClickEvent}
-                    selected={this.state.selected}
-                >
-                <ListItemIcon>
-                    <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-                </ListItem>
+                <this.ListItemLink href="prueba2">
+                    <ListItemIcon>
+                        <DashboardIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Service_Prueba" />
+                </this.ListItemLink>
+                <this.ListItemLink href="/">
+                    <ListItemIcon>
+                        <DashboardIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Dashboard" />
+                </this.ListItemLink>
                 <ListItem 
                     button
                     onClick={this.onClickEvent}
