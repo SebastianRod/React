@@ -8,7 +8,7 @@ router.get('/getAll', async function(req, res, next) {
   var docs = await mongoConnection.find(
     'ORCH_SERVICES',
     {}, 
-    {id: 1, _id: 0, keys: 1, description: 1}, 
+    {id: 1, _id: 1, keys: 1, description: 1}, 
     {id: 1}
   );
   console.log("Found " + docs.length + " records");
