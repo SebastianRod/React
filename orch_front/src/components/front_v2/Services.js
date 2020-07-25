@@ -5,7 +5,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import Title from './Title';
 
 function createData(id, description, keys) {
@@ -54,11 +54,11 @@ class Services extends Component {
                 <TableBody>
                     {this.state.orchServices.map((dato) => (
                         <TableRow key={dato._id}>
-                            <TableCell>
-                                <Link color="primary" href="#" onClick={preventDefault}>
+                            
+                                <Link to={`/Service/${dato.id}`}>
                                     {dato.id}
                                 </Link>
-                            </TableCell>
+                            
                             <TableCell>{dato.description}</TableCell>
                             <TableCell>{dato.keys}</TableCell>
                         </TableRow>

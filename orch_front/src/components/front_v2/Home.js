@@ -24,6 +24,7 @@ import Title from './Title';
 import HomeIcon from '@material-ui/icons/HomeRounded';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Services from './Services';
+import Service from '../front_v2/Service';
 
 const drawerWidth = 240;
 
@@ -159,6 +160,14 @@ export default function Home (){
             {/*Fin de la barra superior con titulo*/}
             {/*Inicio contenedor de pantallas*/}
             <Router>
+              <Route path="/Service/:id">
+              <main className={classes.content}>
+              <div className={classes.appBarSpacer} />
+              <Container>
+                <Service/>
+                </Container>
+              </main>
+              </Route>
                 <Route exact path="/" render={() => {
                     return (
                     <main className={classes.content}>
@@ -188,7 +197,7 @@ export default function Home (){
                     return (
                         <main className={classes.content}>
                         <div className={classes.appBarSpacer} />
-                        <Container maxWidth="lg" className={classes.container}>
+                        <Container className={classes.container}>
                             <Grid container spacing={1}>
                                 <Grid item xs={12}>
                                     <Paper className={fixedHeightPaper}>

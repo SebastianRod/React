@@ -34,6 +34,7 @@ router.get('/getById', async function(req, res, next) {
     'ORCH_SERVICES',
     {id: serviceId}
   );
+  console.log(serviceId);
   console.log("Found record! ");
 
   res.json({
